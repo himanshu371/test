@@ -1,0 +1,11 @@
+<apex:page showHeader="false" standardStylesheets="false">
+  <html>
+  <head></head>
+  <body>
+  <!-- End Default Content REMOVE THIS -->
+  
+  <img src="{!$Resource.lights}"/>
+  
+  </body>
+  </html>
+</apex:page>

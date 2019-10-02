@@ -1,0 +1,23 @@
+<aura:component >
+    <aura:attribute name="data" type="String" default="Event Demo"/>
+
+    <aura:handler event="aura:locationChange" token="{!v.tab-default-1}" action="{!c.update}"/>
+    <p> {!v.data}</p>
+   <div class="slds-tabs_default">
+        <ul class="slds-tabs_default__nav" role="tablist">
+            <li aura:id="tabid" class="tab1 slds-tabs_default__item " title="Item One" role="presentation">
+                <a class="slds-tabs_default__link slds-is-active" href="#tab1" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item">Item One</a>
+            </li>
+            <li aura:id="tabid" class="tab2 slds-tabs_default__item" title="Item Two" role="presentation">
+                <a class="slds-tabs_default__link " href="#tab2" role="tab" tabindex="1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item">Item Two</a>
+            </li>
+            <li aura:id="tabid" class="tab3 slds-tabs_default__item" title="Item Three" role="presentation">
+                <a class="slds-tabs_default__link" href="#tab3" role="tab" tabindex="1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item">Item Three</a>
+            </li>
+        </ul>
+        <div aura:id="tabcontentid" id="tab-default-1" class="tab1 slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">Item One Content</div>
+        <div aura:id="tabcontentid" id="tab-default-2" class="tab2 slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">Item Two Content</div>
+        <div aura:id="tabcontentid" id="tab-default-3" class="tab3 slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-3__item">Item Three Content</div>
+    </div>
+    
+</aura:component>

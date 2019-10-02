@@ -1,0 +1,32 @@
+<apex:page >
+    <apex:includeScript value="{!$Resource.JQuery}"/>
+    
+    <html>
+        <script>
+        $document.ready(function(){
+            $("#hidepara").click(function(){
+                $(".mypara").hide();
+            });
+        });
+        var count=0;
+        function showCount(){
+            count++;
+            $("#para").html()("<b> button is clicked"+ count+ "times")
+        }
+        function showHTML(){
+            $("#mypara").html($("#para").html());
+        }
+         </script>
+        <p id="para">
+                <button onClick="showCount();">
+                    show count
+                </button>
+                 <button onClick="showHTML();">
+                    show html
+                </button>
+            </p>
+       
+        
+    </html>
+    
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:page standardStylesheets="false" showHeader="false">
+    <div class="box" id="blackbox" datagrade="1"> CSS </div>
+    <p class="l"> appirio salesforce </p>
+ <style>
+ 
+ div{
+ color:red;
+ font-size=150px;
+ }
+ 
+ .box{
+ boder:1px solid grey; 
+ }
+ #blackbox{
+ background-color:green;
+ }
+ .l{
+ background-color:blue;
+ }
+ 
+ </style>
+  
+  
+</apex:page>

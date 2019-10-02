@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:handler name="change" value="{!v.parentAttr}" action="{!c.onParentAttrChange}"/>
+    
+    <aura:attribute name="parentAttr" type="String" default="UnBounded Parent Attribute"/>
+    <c:Demo6ChildComponent childAttr="{#v.parentAttr}"/>
+    <p>----------Un-Bounded expression Example---------</p><hr/>
+    <p>UnBounded Parent Attribute={!v.parentAttr}</p>
+    <lightning:button variant="brand" label="Update UnBounded Parent" onclick="{!c.updateParentAttr}"/>
+</aura:component>

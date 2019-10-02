@@ -1,0 +1,38 @@
+<apex:page controller="VFAssirgnmentController" >
+    <apex:form >
+        <apex:actionFunction name="showData" action="{!showContactData}" rerender="conData"/>
+       <!--<apex:actionFunction name="showProductData" action="{!showProductData}" rerender="conData"/>-->
+         <apex:actionFunction name="showData" action="{!showContactData}"/>
+        <apex:outputPanel id="conData">
+            <apex:outputPanel >    
+                <table border="1">
+                    <tr>
+                        <td> Name</td>
+                        <td><apex:inputField value="{!selectedcontact.Name}" rendered="false"/> 
+                            <apex:outputField value="{!selectedcontact.Name}" /></td>
+                        
+                    </tr>
+                    <tr>
+                        <td> Phone</td>
+                        <td> <apex:inputField value="{!selectedcontact.Phone}" rendered="false"/>
+                            <apex:outputField value="{!selectedcontact.Phone}" /></td>
+                    </tr>
+                    
+                </table>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        <apex:selectList value="{!selectedContactId}" size="1" onchange="showData();">
+            <apex:selectOptions value="{!cagList}" />
+        </apex:selectList>
+        
+          <br/> <br/> <br/><hr/> <br/> <br/> <br/>
+
+         <apex:selectList value="{!selectedContactId1}" size="1" onchange="showData();">
+            <apex:selectOptions value="{!pdList}" />
+        </apex:selectList>
+         
+        
+    </apex:form>
+    
+    
+</apex:page>

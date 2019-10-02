@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="data" type="String" default="Parent Comp Value"	/>
+    <aura:attribute name="datafromChild" type="String" />
+    <aura:handler name="childCompEvent" event="c:Demo24CompEvent" action="{!c.handelComp}" />
+    <p>--------------------PARENT sTARTS hERE-----------------</p>
+    <P><ui:inputText value="{!v.data}"  />  </P>
+    <c:Demo24Child dataformParent="{!v.data}" aura:id="child" /><br/><br/> <hr />
+    <ui:button label="Call child method" press="{!c.callChildMethod}"/>
+</aura:component>

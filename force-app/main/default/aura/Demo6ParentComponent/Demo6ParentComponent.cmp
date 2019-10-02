@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:handler name="change" value="{!v.parentAttr}" action="{!c.onParentAttrChange}"/>
+    
+    <aura:attribute name="parentAttr" type="String" default="Bounded Parent Attribute"/>
+    <c:Demo6ChildComponent childAttr ="{!v.parentAttr}"/>
+    <p>----------Bounded expression Example---------</p><hr/>
+    <p>Bounded Parent Attribute={!v.parentAttr}</p>
+    <lightning:button variant="brand" label="Update Bounded Parent" onclick="{!c.updateParentAttr}"/>
+</aura:component>

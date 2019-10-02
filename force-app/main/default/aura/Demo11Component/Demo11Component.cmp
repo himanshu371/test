@@ -1,0 +1,4 @@
+<aura:component >
+	<p aura:id="text"> Welcome to Appirio  </p>
+ <lightning:button variant="base1" label="Base" title="Base action" onclick="{! c.handleClick }"/>
+</aura:component>

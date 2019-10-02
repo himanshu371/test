@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="label" type="String" default="MyDefaultValue" />
+    <aura:attribute name="amount" type="Decimal" default="0.5" />
+    
+    {!v.label} <br/>
+    <meter value="{!v.amount}"></meter>
+</aura:component>

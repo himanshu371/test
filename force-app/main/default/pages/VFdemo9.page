@@ -1,0 +1,96 @@
+<apex:page controller="VFDemo9Controller" sidebar="true"  showHeader="true">
+    <apex:form >
+        <apex:pageMessages id="msg" />
+        
+        
+        <apex:actionFunction name="showData" action="{!showAccountData}" rerender="accData,conData,msg"/>
+        <apex:actionFunction name="fetchContact" action="{!fetchContactRecord}" rerender="conDetails">
+            <apex:param name="param1" value="" assignTo="{!selectedContactId}"/>
+        </apex:actionFunction>
+        <apex:actionFunction name="showWarning" action="{!showWarning}" reRender="msg"/>
+        <apex:selectList value="{!selectedAccountId}" size="1" onchange="showData();">
+            <apex:selectOptions value="{!appList}" />
+        </apex:selectList>
+        <br/> <br/> <br/><hr/> <br/> <br/> <br/>
+        <apex:outputPanel id="accData">
+            <apex:outputPanel rendered="{!selectedAccount.id !=null}">
+                <table border="1">
+                    <tr>
+                        <td> Account Name</td>
+                        <td><apex:outputField value="{!selectedAccount.Name}"/> </td>
+                    </tr>
+                    <tr>
+                        <td> ID</td>
+                        <td><apex:outputField value="{!selectedAccount.id}"/> </td>
+                    </tr>
+                    <tr>
+                        <td> Owner </td>
+                        <td><apex:outputField value="{!selectedAccount.ownerid}"/> </td>
+                    </tr>  
+                    <tr>
+                        <td> Activity </td>
+                        <td><apex:outputField value="{!selectedAccount.Active__c}"/> </td>
+                    </tr>       
+                </table>
+            </apex:outputPanel>
+            <br/> <br/> <br/><hr/> <br/> <br/> <br/>
+            <apex:outputPanel id="conData" rendered="{!relateContactList.size > 0}">
+                <apex:outputPanel >
+                    <table border="1">
+                        <tr>
+                            <th>Action</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>DOB</th>
+                        </tr>
+                        <apex:repeat value="{!relateContactList}" var="conItem">
+                            <tr>
+                                <th><a href="javascript:void(0);" onclick="fetchContact('{!conItem.id}');"> Edit </a></th>
+                                <td>{!conItem.FirstName}</td>
+                                <td>{!conItem.LastName}</td>
+                                <td>{!conItem.Email}</td>
+                                <td>{!conItem.BirthDate}</td>
+                            </tr>
+                        </apex:repeat>
+                    </table>
+                </apex:outputPanel>
+            </apex:outputPanel>
+            
+            
+            
+        </apex:outputPanel>
+        <apex:outputPanel id="conDetails">
+            <apex:outputPanel rendered="{!selectedContact.id !=null}">
+                <table>
+                    <tr>
+                        <td>  First Name </td>
+                        <td><apex:inputField value="{!selectedContact.FirstName}"/> </td>
+                    </tr>
+                    <tr>
+                        <td>  Last Name </td>
+                        <td><apex:inputField value="{!selectedContact.LastName}" onchange="showWarning();"/> </td>
+                    </tr>
+                    <tr>
+                        <td> Email </td>
+                        <td><apex:inputField value="{!selectedContact.Email}"/> </td>
+                    </tr>
+                    <tr>
+                        <td> Birth Date </td>
+                        <td><apex:inputField value="{!selectedContact.BirthDate}"/> </td>
+                    </tr>
+                    <tr>
+                        <td><apex:commandButton value="save" action="{!save}" reRender="conDetails,accData"/></td>
+                        
+                        
+                    </tr>
+                    
+                    
+                    
+                </table>           
+            </apex:outputPanel>
+            
+        </apex:outputPanel>
+    </apex:form>
+    
+</apex:page>

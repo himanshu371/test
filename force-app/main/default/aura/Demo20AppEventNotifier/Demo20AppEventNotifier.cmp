@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:registerEvent name="appEvent" type="c:Demo20ApplicationEvent" />
+    <h1> Application Event Notifier</h1>
+    <ui:button label="fire Event Notifier" press="{!c.fireAppEvent}" />
+</aura:component>

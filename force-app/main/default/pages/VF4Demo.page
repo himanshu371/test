@@ -1,0 +1,27 @@
+<apex:page showHeader="false" standardController="Opportunity" extensions="VFDemo4Extension" >
+    <apex:form >
+        <table border="1">
+            <td>
+                Opportunity name
+            </td>
+            <td><apex:inputField value="{!Opportunity.Name}" required="true" /></td>
+            <td>
+                Close Date
+            </td>
+            <td><apex:inputField value="{!Opportunity.CloseDate}" required="true" /></td>
+            <td>
+                Stage
+            </td>
+            <td><apex:inputField value="{!Opportunity.StageName}" required="true" /></td>
+            <td>
+                forcast Category
+            </td>
+            <td><apex:inputField value="{!Opportunity.ForecastCategoryName}"/></td>
+            <tr>
+             <td><apex:commandButton value="Save" action="{!save}" /></td>
+             <td><apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/></td>
+            </tr>
+        </table>
+    </apex:form>
+    
+</apex:page>

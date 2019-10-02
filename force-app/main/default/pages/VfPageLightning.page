@@ -1,0 +1,19 @@
+<apex:page standardController="AS3College__c" standardstylesheets="false" >
+    <apex:includeLightning />
+<apex:includeScript value="/lightning/lightning.out.js"/>
+    <div id="CovertExhibit" />
+    <script>
+    var Id = "{!$CurrentPage.parameters.id}"; 
+    console.log('NewComponent'+Id);
+    
+         $Lightning.use("c:ORN_Exhibit_Convert_Application", function() {
+            $Lightning.createComponent(
+                "c:ORN_Exhibit_Convert",
+                {"recordId":Id},
+                "CovertExhibit",
+                function(cmp) {console.log('cmp created');});
+            });
+
+    </script>
+   
+</apex:page>

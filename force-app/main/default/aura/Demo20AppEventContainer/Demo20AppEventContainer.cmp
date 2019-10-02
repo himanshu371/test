@@ -1,0 +1,10 @@
+<aura:component >
+    <c:Demo20EmptyAppEventContainer>
+      <c:Demo20AppEventNotifier/>
+    </c:Demo20EmptyAppEventContainer>
+    <c:Demo20EmptyAppEventContainer>
+         <c:Demo20EmptyAppEventContainer>
+                 <c:Demo20AppEventHandler/>
+         </c:Demo20EmptyAppEventContainer>
+    </c:Demo20EmptyAppEventContainer>
+</aura:component>

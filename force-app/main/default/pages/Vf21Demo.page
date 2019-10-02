@@ -1,0 +1,12 @@
+<apex:page standardStylesheets="false" showHeader="false" >
+    <div id="time">
+        <apex:includeLightning />
+        <script>
+        $Lightning.use("c:Demo22LightnigAppVF",function() {
+            $Lightning.createComponent("c:Demo21TimeComp",{},"time",function(cmp) {
+                console.log("Component created");
+            });
+        });
+        </script>
+    </div>
+</apex:page>

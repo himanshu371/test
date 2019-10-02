@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:attribute name="facetDemo" type="Aura.Component[]"/><br/>
+    {!v.facetDemo} <hr/>
+    {!v.body}
+</aura:component>

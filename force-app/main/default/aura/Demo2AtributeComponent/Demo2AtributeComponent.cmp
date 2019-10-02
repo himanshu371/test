@@ -1,0 +1,22 @@
+<aura:component >
+    <aura:attribute name="jsObject" type="Object"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <hr/>
+    jsObject<br />
+    {!v.jsObject.name}<br/>
+    {!v.jsObject.email}<br/>
+    <aura:attribute name="newAccount" type="Account" default="{'sobject':'Account','Name':'Test1'}" />
+    <hr />
+    {!v.newAccount.Name}
+    <aura:attribute name="arrayDemo" type="String[]" default="{'v1','v2','v3'}" />
+ <aura:attribute name="ListDemo" type="List" default="{'listValue1','listValue2','listValue3'}" />
+     <aura:attribute name="mapDemo" type="Map" default="{a:'mapvalue1',b:'mapvalue2',c:'mapvalue3'}" />
+ <aura:attribute name="setDemo" type="Set" default="{'setvalue1','setvalue2','setvalue3'}" />
+    
+   Array value: {!v.arrayDemo[0]} <br />
+    List value: {!v.ListDemo[0]} <br />
+   Map value: {!v.mapDemo.b} <br />
+   Set value: {!v.setDemo.length} <br />
+    <aura:attribute name="userData" type="DemoLightning.wrapperTest" />
+    {!v.userData.myString}
+</aura:component>

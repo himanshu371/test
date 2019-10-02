@@ -1,0 +1,29 @@
+<apex:page showHeader="false" >
+    <apex:includeScript value="{!$Resource.JQuery}"/>
+    <html>
+        <body>
+            <script>
+            $(document).ready(function(){
+                $("#hidepara").click(function(){
+                    $(".mypara").hide();
+                });
+            });
+            function showPara(){
+                $(".mypara").show();
+            } 
+                </script>
+            <p class="mypara">
+                this is para
+                <button id="hidepara">
+                    hide
+                </button>
+            </p>
+            <p>
+                <button onClick="showPara();">
+                    show
+                </button>
+            </p>
+        </body>
+        
+    </html>
+</apex:page>

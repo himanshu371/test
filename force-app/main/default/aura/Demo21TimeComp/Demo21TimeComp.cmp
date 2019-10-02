@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes" >
+    <aura:attribute name="dateValue" type="String" access="GLOBAL" />
+    <aura:attribute name="format" type="String" access="GLOBAL" />
+    <aura:handler name="init" value="{!this}" action="{!c.setValue}"/>
+    <ui:outputDateTime aura:id="oDate time" value="{!v.dateValue}" format="{!v.format}" />
+    <aura:attribute type="String" name="class" access="global"/>
+
+</aura:component>

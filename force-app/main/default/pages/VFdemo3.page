@@ -1,0 +1,19 @@
+<apex:page showHeader="false" standardController="Account" extensions="VFDemo3Extension" action="{!URLReturn}">
+    <apex:form >
+        {!message}
+     <table border="1">
+            <tr>
+             <td>Account Name</td>
+                <td><apex:inputField value="{!Account.Name}" /></td>
+            </tr>
+            <tr>
+             <td>Rating</td>
+                <td><apex:inputField value="{!Account.Rating}" required="true" /></td>
+            </tr>
+            <tr>
+             <td><apex:commandButton value="Save" action="{!save}"/></td>
+             <td><apex:commandButton value="Cancel" action="{!customCancel}" immediate="true"/></td>
+            </tr>
+        </table>
+    </apex:form>
+</apex:page>

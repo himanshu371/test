@@ -1,0 +1,12 @@
+<aura:component controller="Demo17EvenControler">
+    <aura:attribute name="data" type="String" default="Event Demo"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInIt}" />
+    <aura:handler name="init" value="{!this}" action="{!c.onRender}" />
+    <aura:handler event="aura:locationChange" action="{!c.update}"/>
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+  <lightning:button variant="brand" label="Ping Server" onclick="{!c.handleClick }" />
+
+    <p> {!v.data}</p>
+   
+</aura:component>

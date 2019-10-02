@@ -1,0 +1,25 @@
+<apex:page controller="VFDemo7Controller" >
+    <apex:form >
+        <table border="1">
+            <tr>
+                <td>Account Name</td>
+                <td><apex:inputField value="{!acc.Name}" rendered="{!showEdit}"/> 
+                   <apex:outputField value="{!acc.Name}" rendered="{!!showEdit}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Rating</td>
+                <td><apex:inputField value="{!acc.Rating}" rendered="{!showEdit}"/>
+                    <apex:outputField value="{!acc.Rating}" rendered="{!!showEdit}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <apex:commandButton value="Save" action="{!save}" rendered="{!showEdit}"/>
+                    <apex:commandButton value="Edit" action="{!edit}" rendered="{!!showEdit}"/>
+                </td>
+                <td><apex:commandButton value="Cancel" action="{!cancel}"/></td>
+            </tr>
+        </table>
+    </apex:form>
+</apex:page>

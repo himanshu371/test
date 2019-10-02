@@ -1,0 +1,49 @@
+<apex:page controller="VFDemo6Controller">
+<!--<apex:outputPanel rendered="{!showPanel}">
+Panel 1
+</apex:outputPanel>
+<apex:outputPanel rendered="{!showPanel}">
+Panel 2
+</apex:outputPanel>-->
+    <apex:form >
+        <apex:pageBlock title="Custom Page Block">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!save}" />
+                <apex:commandButton value="Cancel" action="{!cancel}" />
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection title="Custom Section" columns="2">
+                <apex:pageBlockSectionItem >
+                    Section 1
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    Section 2
+                </apex:pageBlockSectionItem>           
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockTable value="{!accList}" var="accItem">
+                <apex:column value="{!accItem.Id}"/>
+                <apex:column value="{!accItem.Name}"/>
+                <apex:column value="{!accItem.AccountNumber}"/>
+                <apex:column value="{!accItem.OwnerId}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>AccountNumber</th>
+                <th>OwnerId</th>
+                <apex:repeat value="{!accList}" var="accItem">
+                    <tr>
+                        <td>{!accItem.Id}</td>
+                        <td>{!accItem.Name}</td>
+                        <td>{!accItem.AccountNumber}</td>
+                        <td><apex:outputField value="{!accItem.OwnerId}" /> </td>
+                    </tr>
+                </apex:repeat>
+            </tr>
+        </table>
+    </apex:form>
+</apex:page>

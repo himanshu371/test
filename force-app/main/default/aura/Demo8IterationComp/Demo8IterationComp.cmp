@@ -1,0 +1,9 @@
+<aura:component >
+	<div class="white">Hello !! </div>
+    <h2> Style in heding2</h2>
+    <ul>
+    	<li class="red">Red</li>
+        <li class="blue">Blue</li>
+        <li class="green">Green</li>
+    </ul>
+</aura:component>
